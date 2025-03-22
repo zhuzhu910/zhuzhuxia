@@ -8,43 +8,52 @@
     <style>
         /* 居中图片的样式 */
         .center-image {
-            display: block; /* 让图片成为块级元素 */
-            margin: 0 auto;  /* 左右 margin 自动，实现水平居中 */
-            max-width: 100px; /* 设置图片最大宽度，控制大小 */
-            height: auto;     /* 高度自适应 */
-            margin-bottom: 10px; /* 添加下边距 */
+            display: block;
+            margin: 0 auto;
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        /* 隐藏页面样式 */
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="header-section" style="  /* 淡蓝色 */
-        background-color: #ADD8E6;
-        text-align: center;
-        padding: 15px;
-        border-radius: 8px;
-        margin-bottom: 10px;">  <!-- 头部区域 -->
-            <h1>猪猪的待办事项</h1>
-        </div>
 
-        <div class="task-section"> <!-- 待办事项区域 -->
-            <div class="input-section">
-                <img class="center-image" src="https://img95.699pic.com/photo/50256/3011.jpg_wh860.jpg" alt="可爱的猪猪">
-                <input type="text" id="new-task" placeholder="添加新的任务">
-                <button id="add-button">添加</button>
+        <div id="page1">  <!-- 第一个页面内容 -->
+            <div class="header-section" style=" /* 淡蓝色 */
+            background-color: #ADD8E6;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;">
+                <h1>猪猪的待办事项</h1>
             </div>
 
-            <ul id="task-list">
-                <!-- 待办事项将动态添加到这里 -->
-            </ul>
+            <div class="task-section">
+                <div class="input-section">
+                    <img class="center-image" src="https://img95.699pic.com/photo/50256/3011.jpg_wh860.jpg" alt="可爱的猪猪">
+                    <input type="text" id="new-task" placeholder="添加新的任务">
+                    <button id="add-button">添加</button>
+                </div>
 
-            <button id="go-to-next-page">前往下一页</button>  <!-- 添加id -->
+                <ul id="task-list">
+                    <!-- 待办事项将动态添加到这里 -->
+                </ul>
+
+                <button id="go-to-next-page">前往下一页</button>
+            </div>
         </div>
 
-        <div class="your-tasks-section"> <!-- 你的待办事项 -->
-            <h2>你的待办事项</h2>
-            <p>这里显示你自己的待办事项。</p>
+        <div id="page2" class="hidden"> <!-- 第二个页面内容，默认隐藏 -->
+            <h1>这是下一页</h1>
+            <p>欢迎来到下一页！</p>
+            <button id="go-back">返回上一页</button>
         </div>
 
         <div class="footer-section"> <!-- 底部区域 -->
