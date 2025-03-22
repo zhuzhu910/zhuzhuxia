@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猪猪生活日记</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 居中图片的样式 */
+        .center-image {
+            display: block; /* 让图片成为块级元素 */
+            margin: 0 auto;  /* 左右 margin 自动，实现水平居中 */
+            max-width: 100px; /* 设置图片最大宽度，控制大小 */
+            height: auto;     /* 高度自适应 */
+            margin-bottom: 10px; /* 添加下边距 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-section" style="  /* 淡蓝色 */
+        background-color: #ADD8E6;
+        text-align: center;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 10px;">  <!-- 头部区域 -->
+            <h1>猪猪的待办事项</h1>
+        </div>
+
+        <div class="task-section"> <!-- 待办事项区域 -->
+            <div class="input-section">
+                <img class="center-image" src="https://img95.699pic.com/photo/50256/3011.jpg_wh860.jpg" alt="可爱的猪猪">
+                <input type="text" id="new-task" placeholder="添加新的任务">
+                <button id="add-button">添加</button>
+            </div>
+
+            <ul id="task-list">
+                <!-- 待办事项将动态添加到这里 -->
+            </ul>
+
+            <button id="go-to-next-page">前往下一页</button>  <!-- 添加id -->
+        </div>
+
+        <div class="your-tasks-section"> <!-- 你的待办事项 -->
+            <h2>你的待办事项</h2>
+            <p>这里显示你自己的待办事项。</p>
+        </div>
+
+        <div class="footer-section"> <!-- 底部区域 -->
+            <p>你是猪猪</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
