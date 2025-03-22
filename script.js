@@ -2,10 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const newTaskInput = document.getElementById('new-task');
     const addButton = document.getElementById('add-button');
     const taskList = document.getElementById('task-list');
-    const goToSettingsButton = document.getElementById('go-to-settings');
-
-   // 获取前往下一页的button
     const goToNextPageButton = document.getElementById('go-to-next-page');
+    const goBackButton = document.getElementById('go-back');
+
+    const page1 = document.getElementById('page1');
+    const page2 = document.getElementById('page2');
 
     addButton.addEventListener('click', function() {
         const taskText = newTaskInput.value.trim();
@@ -24,19 +25,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 添加事件监听器，用于页面跳转
-    if(goToSettingsButton){ //Ensure the button exists before adding listener
-         goToSettingsButton.addEventListener('click', function() {
-        window.location.href = 'settings.html'; // 使用 JavaScript 跳转页面
-       });
+    // 前往下一页
+    if(goToNextPageButton){
+      goToNextPageButton.addEventListener('click', function() {
+          page1.classList.add('hidden');
+          page2.classList.remove('hidden');
+      });
     }
 
-
-    // 为"前往下一页"的按钮添加事件监听器
-    if(goToNextPageButton){ //Ensure the button exists before adding listener
-        goToNextPageButton.addEventListener('click', function() {
-            window.location.href = 'index(1).html'; // 跳转到 next_page.html
+    // 返回上一页
+     if(goBackButton){
+        goBackButton.addEventListener('click', function() {
+            page2.classList.add('hidden');
+            page1.classList.remove('hidden');
         });
-    }
-
+     }
 });
